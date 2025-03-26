@@ -1,0 +1,22 @@
+{
+  "name": "Copy link text",
+  "description": "Copy the text of a link to the clipboard",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+	  "contextMenus",
+	  "scripting",
+	  "activeTab",
+	  "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+     "service_worker": "service-worker.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["copy-link.js"]
+  }]
+}
